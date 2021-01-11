@@ -1,0 +1,62 @@
+---
+title: "Ottawa Bike Thefts"
+author: "[Patrick Reza Schnurbusch](https://github.com/Erebus54/Ottawa-Bike-Thefts)"
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    code_folding: hide
+    theme: darkly
+    highlight: breezedark 
+    toc: true 
+    toc_depth: 2
+    number_sections: true
+    toc_float: 
+      collapsed: false
+      smooth_scroll: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(sf)
+library(dplyr)
+
+library(leaflet)
+library(leaflet.extras)
+library(leaflet.providers)
+
+require(ggplot2)
+```
+
+# Exploratory Analysis 
+
+```{r, results='hide'}
+df = st_read(dsn = "dataset/761b7066-0cab-4484-9e7d-11394d476fdf2020330-1-1r845v6.p1mr.shp")
+
+df <- df %>% 
+  dplyr::rename(OPS_Division = Division,
+                OPS_Sector = Sector,
+                Report_Date = Report_Dat,
+                Incident_Day = Incident_D, 
+                Incident_Weekday = Incident_W, 
+                Location_Type = Location_T, 
+                Primary_Offence = Primary_Of,
+                Neighbourhood = Neighbourh,
+                Bicycle_Status = Bicycle_St,
+                Bicycle_Value = Bicycle_Va, 
+                Bicycle_Make = Bicycle_Ma, 
+                Bicycle_Model = Bicycle_Mo, 
+                Bicycle_Type = Bicycle_Ty, 
+                Bicycle_Frame = Bicycle_Fr, 
+                Bicycle_Colour = Bicycle_Co, 
+                Bicycle_Speed = Bicycle_Sp, 
+                Longitude = x, 
+                Latitude = y)
+```
+
+# Point Pattern Analysis 
+# Areal Statistics 
+# Geostatisics 
+
+## LOL 
+### LMAO 
